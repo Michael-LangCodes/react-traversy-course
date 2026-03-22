@@ -9,6 +9,9 @@ const HomePage = () => {
   return (
     <>
       <Hero/>
+      <HomeCards/>
+      <JobListings/>
+      <ViewAllJobs/>
     </>
   )
 }
