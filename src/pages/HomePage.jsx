@@ -7,7 +7,9 @@ import ViewAllJobs from '../components/ViewAllJobs'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+      <Hero/>
+    </>
   )
 }
 
