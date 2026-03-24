@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, useLoaderData, Link } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 
 const JobPage = () => {
   const { id } = useParams();
@@ -43,23 +43,21 @@ const JobPage = () => {
             <div
               className="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
             >
-              <div className="text-gray-500 mb-4">Full-Time</div>
+              <div className="text-gray-500 mb-4">{job.type}</div>
               <h1 className="text-3xl font-bold mb-4">
-                Senior React Developer
+                {job.title}
               </h1>
               <div
                 className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
               >
-                <i
-                  className="fa-solid fa-location-dot text-lg text-orange-700 mr-2"
-                ></i>
-                <p className="text-orange-700">Boston, MA</p>
+                <FaMapMarker className='text-orange-700 mr-2'/>
+                <p className="text-orange-700">{job.location}</p>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-indigo-800 text-lg font-bold mb-6">
-                Job Description
+                {job.description}
               </h3>
 
               <p className="mb-4">
@@ -68,7 +66,7 @@ const JobPage = () => {
 
               <h3 className="text-indigo-800 text-lg font-bold mb-2">Salary</h3>
 
-              <p className="mb-4">$70k - $80K / Year</p>
+              <p className="mb-4">{job.salary} / Year</p>
             </div>
           </main>
 
@@ -78,10 +76,10 @@ const JobPage = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-6">Company Info</h3>
 
-              <h2 className="text-2xl">NewTek Solutions</h2>
+              <h2 className="text-2xl">{job.company.name}</h2>
 
               <p className="my-2">
-                NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.
+                {job.company.description}
               </p>
 
               <hr className="my-4" />
@@ -89,12 +87,12 @@ const JobPage = () => {
               <h3 className="text-xl">Contact Email:</h3>
 
               <p className="my-2 bg-indigo-100 p-2 font-bold">
-                contact@newteksolutions.com
+                {job.company.contactEmail}
               </p>
 
               <h3 className="text-xl">Contact Phone:</h3>
 
-              <p className="my-2 bg-indigo-100 p-2 font-bold">555-555-5555</p>
+              <p className="my-2 bg-indigo-100 p-2 font-bold">{job.company.contactPhone}</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
